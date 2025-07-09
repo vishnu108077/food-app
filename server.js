@@ -1,12 +1,11 @@
 const express= require('express');
-const colors = require('colors');
 const cors= require('cors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const { connectDB } = require('./config/db');
 
 //dot env config
-dotenv.config();
+dotenv.config();    // What is dotenv?
 
 // DB connection
 connectDB();
@@ -14,7 +13,7 @@ connectDB();
 const app = express();
 
 //middleware
-app.use(cors());
+app.use(cors());    // What is CORS ?
 app.use(morgan('dev'));
 app.use(express.json());
 
@@ -32,8 +31,8 @@ app.get('/', (req, res) => {
     return res.status(200).send('<h1>Hello,FOOD App!</h1>');
 })
 //port
-const PORT=process.env.PORT || 5000;
+const PORT=process.env.PORT || 5000; // What is PORT? What is its significance?
 //listening to the port
-app.listen(PORT,()=>{
-    console.log(`Server is running on http://localhost:${PORT}`.white.bgCyan);
+app.listen(PORT,()=>{   // Listening means what ?
+    console.log(`Server is running on http://localhost:${PORT}`.white.bgCyan);  
 })
