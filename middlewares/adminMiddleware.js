@@ -1,7 +1,7 @@
 const JWT = require('jsonwebtoken');
 const userModel = require('../models/userModel');
 
-module.exports = async(req, res, next) => {
+async function checkAdmin (req, res, next){
     try {
         const user= await userModel.findById(req.userId);
         if(user.usertype !== 'admin') {
@@ -22,3 +22,5 @@ module.exports = async(req, res, next) => {
         });
     }
 };
+
+module.exports = { checkAdmin };

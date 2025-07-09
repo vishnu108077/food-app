@@ -4,6 +4,7 @@ const foodModel = require("../models/foodModel");
 const createFoodController = async (req, res) => {
     try {
         const { title, description, price, imageUrl, foodTags, category, code, isAvailable, restaurant, rating, ratingCount } = req.body;
+
         if (!title || !description || !price || !restaurant) {
             return res.status(500).send({
                 success: false,

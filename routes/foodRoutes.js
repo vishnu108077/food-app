@@ -27,5 +27,5 @@ router.delete('/delete/:id',authMiddleware,deleteFoodController);
 router.post('/placeOrder',authMiddleware,placeOrderController)
 
 //order status
-router.post('/orderStatus/:id', authMiddleware,adminMiddleware,orderStatusController);
+router.post('/orderStatus/:id', authMiddleware, adminMiddleware.checkAdmin, orderStatusController);
 module.exports= router; 
