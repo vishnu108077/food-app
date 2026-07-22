@@ -88,5 +88,3 @@ const loginController = async (req, res) => {
     }
 }
 module.exports = { registerController, loginController }
-
-// cvhanged another
